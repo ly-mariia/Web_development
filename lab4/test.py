@@ -33,3 +33,14 @@ def test_create_cart():
     assert response.status_code == 200
     assert response.json() == {"item_id": 1, "quantity": 1}
 
+
+def test_delete_item():
+    response = client.delete("/items/1", headers=headers)
+    assert response.status_code == 200
+    assert response.json() == {"message": "Item deleted successfully"}
+
+
+def test_delete_cart():
+    response = client.delete("/cart/1", headers=headers)
+    assert response.status_code == 200
+    assert response.json() == {"message": "Cart item deleted successfully"}

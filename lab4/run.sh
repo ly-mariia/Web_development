@@ -6,7 +6,10 @@ pip install locust
 
 pytest test.py
 
-coverage report -m
+coverage run -m pytest test.py # 1
+coverage report -m # 2
+
+coverage html
 
 locust -f locustfile.py --host=http://localhost:8000
 
